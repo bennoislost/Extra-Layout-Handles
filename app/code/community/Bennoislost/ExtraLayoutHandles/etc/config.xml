@@ -8,9 +8,7 @@
     <global>
         <models>
             <bennoislost_extralayouthandles>
-                <models>
-                    <class>Bennoislost_ExtraLayoutHandles_Model</class>
-                </models>
+                <class>Bennoislost_ExtraLayoutHandles_Model</class>
             </bennoislost_extralayouthandles>
         </models>
     </global>
