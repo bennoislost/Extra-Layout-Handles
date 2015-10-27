@@ -1,37 +1,46 @@
 <?xml version="1.0"?>
 <config>
     <modules>
-        <Ho_Handles>
-            <version>0.1.0</version>
-        </Ho_Handles>
+        <Bennoislost_ExtraLayoutHandles>
+            <version>0.0.1</version>
+        </Bennoislost_ExtraLayoutHandles>
     </modules>
+    <global>
+        <models>
+            <bennoislost_extralayouthandles>
+                <models>
+                    <class>Bennoislost_ExtraLayoutHandles_Model</class>
+                </models>
+            </bennoislost_extralayouthandles>
+        </models>
+    </global>
     <frontend>
         <events>
             <controller_action_layout_load_before>
                 <observers>
                     <add_category_path_handle>
                         <type>singleton</type>
-                        <class>Ho_Handles_Model_Observer</class>
+                        <class>bennoislost_extralayouthandles/observer</class>
                         <method>addCategoryPathHandle</method>
                     </add_category_path_handle>
                     <add_attribute_set_handle>
                         <type>singleton</type>
-                        <class>Ho_Handles_Model_Observer</class>
+                        <class>bennoislost_extralayouthandles/observer</class>
                         <method>addAttributeSetHandle</method>
                     </add_attribute_set_handle>
                     <add_attribute_handles>
                         <type>singleton</type>
-                        <class>Ho_Handles_Model_Observer</class>
+                        <class>bennoislost_extralayouthandles/observer</class>
                         <method>addAttributeHandles</method>
                     </add_attribute_handles>
                     <add_cms_page_handle>
                         <type>singleton</type>
-                        <class>Ho_Handles_Model_Observer</class>
+                        <class>bennoislost_extralayouthandles/observer</class>
                         <method>addCmsPageHandle</method>
                     </add_cms_page_handle>
                     <add_customer_group_handle>
                         <type>singleton</type>
-                        <class>Ho_Handles_Model_Observer</class>
+                        <class>bennoislost_extralayouthandles/observer</class>
                         <method>addCustomerGroupHandle</method>
                     </add_customer_group_handle>
                 </observers>
