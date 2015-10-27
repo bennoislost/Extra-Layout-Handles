@@ -1,5 +1,5 @@
 <?php
-class Ho_Handles_Model_Observer
+class Bennoislost_ExtraLayoutHandles_Model_Observer
 {
     /**
      * Adds a category id and path layout handle
