@@ -1,12 +1,11 @@
 <?xml version="1.0"?>
-<config>	
-	<modules>
+<config>
+    <modules>
         <Ho_Handles>
             <version>0.1.0</version>
         </Ho_Handles>
     </modules>
-
-	<frontend>
+    <frontend>
         <events>
             <controller_action_layout_load_before>
                 <observers>
@@ -38,5 +37,5 @@
                 </observers>
             </controller_action_layout_load_before>
         </events>
-	</frontend>
+    </frontend>
 </config>
