@@ -3,45 +3,25 @@
 class Bennoislost_ExtraLayoutHandles_Model_Observer
 {
     /**
-     * Adds a category id and path layout handle
-     *
-     * @event controller_action_layout_load_before
-     *
-     * @param Varien_Event_Observer $observer
+     * @param Varien_Event_Observer $event
      */
-    public function addCategoryPathHandle(Varien_Event_Observer $observer)
+    public function addCategoryPathHandle(Varien_Event_Observer $event)
     {
-        $handlePrefix = 'CATEGORY';
-
-        /** @var $category Mage_Catalog_Model_Category */
         $category = Mage::registry('current_category');
-        if ($category && $category instanceof Mage_Catalog_Model_Category) {
 
-            /** @var $layout Mage_Core_Model_Layout */
-            $layout = Mage::getSingleton('core/layout');
-            $update = $layout->getUpdate();
-
-            //if we are taking a look at a category page we don't add handles
-            if (in_array('catalog_product_view', $update->getHandles())) {
-                $handlePrefix = 'PRODUCT_CATEGORY';
-            }
-
-            //We add the category paths here, ex: CATEGORY_123 and CATEGORY_12_child
-            $path = array_reverse(array_slice($category->getPathIds(), 1, -1));
-
-            foreach ($path as $id) {
-                $elem = array_pop($path);
-                $count = count($path);
-                $handle = $handlePrefix . '_' . $elem;
-                for ($i = 0; $i <= $count; $i++) {
-                    $handle .= '_child';
-                }
-
-                $update->addHandle($handle);
-                $update->addHandle(substr($handle, 0, strrpos($handle, 'child'))
-                    . $category->getUrlKey());
-            }
+        if (!$category && !$category instanceof Mage_Catalog_Model_Category) {
+            return;
         }
+
+        /** @var Mage_Core_Model_Layout $layout */
+        $layout = $event->getEvent()->getLayout();
+
+        $object = new Bennoislost_ExtraLayoutHandles_Model_Layout_Handle_Category(
+            $category,
+            $layout
+        );
+
+        $object->updateLayoutHandles();
     }
 
     /**
