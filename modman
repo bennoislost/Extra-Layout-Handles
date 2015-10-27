@@ -1,2 +1,7 @@
-app/code/local/Ho/Handles/     app/code/local/Ho/Handles/
-app/etc/modules/*              app/etc/modules/
+# Bennoislost - Extra Layout Handles
+
+# Code
+app/code/community/Bennoislost/ExtraLayoutHandles    app/code/community/Bennoislost/ExtraLayoutHandles
+
+# Init File
+app/etc/modules/Bennoislost_ExtraLayoutHandles.xml    app/etc/modules/Bennoislost_ExtraLayoutHandles.xml
