@@ -1,8 +1,33 @@
-# H&O Handles
+# Extra Layout Handles
+
 This is a utility module that should make building Magento websites a bit easier.
 
+
+Forked from [https://github.com/ho-nl/Ho_Handles](https://github.com/ho-nl/Ho_Handles). Top work chaps!
+
+
 ## Getting started with handles.
--- enter description here --
+
+The following snippit will remove the product listings from direct children of category id `15`, also adds a simple text block to the top of content.
+
+```
+<CATEGORY_15_child>
+    <reference name="content">
+        <action method="unsetChild">
+            <alias>category.products</alias>
+        </action>
+        <block type="core/text_list" name="test" before="-">
+            <block type="core/text" name="benno" output="toHtml">
+                <action method="setText">
+                    <text>hello</text>
+                </action>
+            </block>
+        </block>
+    </reference>
+</CATEGORY_15_child>
+```
+
+Add the above snippet to your themes `local.xml`
 
 ## Add handles to category page
 
@@ -52,3 +77,7 @@ CMS_PAGE_customerservice_child_child
 CMS_PAGE_customerservice_faq_child
 CMS_PAGE_customerservice_faq_question_one
 ```
+
+## Thanks
+
+[https://github.com/ho-nl/Ho_Handles](https://github.com/ho-nl/Ho_Handles)
