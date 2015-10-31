@@ -1,0 +1,14 @@
+{
+    "name": "bennoislost/extra-layout-handles",
+    "type": "magento-module",
+    "description": "Add extra layout handles to routes",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ben McManus"
+        }
+    ],
+    "require": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}
